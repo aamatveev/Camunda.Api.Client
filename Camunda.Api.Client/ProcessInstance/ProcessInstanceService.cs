@@ -29,5 +29,7 @@ namespace Camunda.Api.Client.ProcessInstance
         /// Create a batch to set retries of jobs associated with given processes asynchronously.
         /// </summary>
         public Task<BatchInfo> SetRetriesByProcess(JobRetriesByProcess setJobRetries) => _api.SetRetriesByProcess(setJobRetries);
+
+        public Task ModifyVariables(string id, PatchVariables patch) => _api.ModifyVariables(id, patch);
     }
 }

@@ -23,5 +23,9 @@ namespace Camunda.Api.Client.UserTask
             new QueryResource<TaskQuery, UserTaskInfo>(query, _api.GetList, _api.GetListCount);
 
         public Task Create(UserTask task) => _api.CreateTask(task);
+
+        public Task<Dictionary<string, VariableValue>> GetVariables(string id) => _api.GetVariables(id);
+
+        public Task Complete(string id, CompleteTask completeTask) => _api.CompleteTask(id, completeTask);
     }
 }
