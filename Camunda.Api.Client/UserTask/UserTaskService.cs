@@ -27,5 +27,7 @@ namespace Camunda.Api.Client.UserTask
         public Task<Dictionary<string, VariableValue>> GetVariables(string id) => _api.GetVariables(id);
 
         public Task Complete(string id, CompleteTask completeTask) => _api.CompleteTask(id, completeTask);
+
+        public Task SetAssignee(string id, string userId) => _api.SetAssignee(id, new UserInfo { UserId = userId });
     }
 }
